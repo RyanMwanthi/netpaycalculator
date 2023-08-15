@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Netpay Calculator</title>
+    <link rel="stylesheet" href="/boot.css">
+</head>
+
+<body style="background-color: rgb(246, 247, 248);">
+
+    <!--<div class="container" style="background-color: aqua;">-->
+    <!-- <div class="row" style="background-color: rgb(109, 190, 190);">
+        <div class="col-3" style="background-color: black;">
+            <img src="" alt="Payroll logo">
+        </div>
+        <div class="col-9">
+
+        </div>
+    </div>
+    JHHJ
+    <div class="col-lg-6">
+        <form>
+            <div class="row">
+                <div class="col-sm-12">
+                    <span for="grosssalary" class="input-group-sm">Enter gross salary:</span>
+                    <input type="text" class="form-control" id="grosssalary" style="font-size: 15px; width: 400px;">
+                    <button type="submit" class="btn btn-warning" onclick="calculatenetpay()">Calculate</button>
+                    <p id="nhifresults"></p>
+
+                </div>
+
+        </form>
+    </div>-->
+    <script> 
+
+
+
+
+        function calculateneNHIF() {
+
+            // calculate Nhif contributions
+            let nhifContribution;
+
+            if (income <= 5999) {
+                nhifContribution = 150;
+            } else if (income <= 7999) {
+                nhifContribution = 300;
+            } else if (income <= 11999) {
+                nhifContribution = 400;
+            } else if (income <= 14999) {
+                nhifContribution = 500;
+            } else if (income <= 19999) {
+                nhifContribution = 600;
+            } else if (income <= 24999) {
+                nhifContribution = 750;
+            } else if (income <= 29999) {
+                nhifContribution = 850;
+            } else if (income <= 34999) {
+                nhifContribution = 900;
+            } else if (income <= 39000) {
+                nhifContribution = 950;
+            }
+        }
+            // Calculate NSSF contribution
+            const nssfRate = 0.06;
+            const maxNSSFContribution = 18000;
+            const nssfContribution = Math.min(income * nssfRate, maxNSSFContribution);
+
+            // calculate Payee
+            let payee = 0;
+
+            if (taxableIncome > 24000) {
+                if (taxableIncome > 32000) {
+                    payee += (8333 * 0.25) + ((taxableIncome - 32000) * 0.3);
+                } else {
+                    payee += (8333 * 0.25);
+                }
+            } else if (taxableIncome > 2400) {
+                payee += (taxableIncome - 24000) * 0.1;
+            }
+
+            payee -= 2400;
+
+
+        
+
+
+    </script>
+    <script src="/boot.js"></script>
+</body>
+
+</html>

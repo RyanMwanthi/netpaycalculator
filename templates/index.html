@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Netpay Calculator</title>
+    <link rel="stylesheet" href="/static/boot.css">
+</head>
+
+<body>
+   <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <img src="/logo/payroll-logo (1).png" alt="Payroll logo">
+            </div>
+            <div class="col-9">
+
+            </div>
+        </div>
+        <section class="container-fluid ">
+            <form class="col-12">
+                <div class="col-md-12">
+                    <h1 class="mb-4">NET PAY CALCULATOR</h1>
+                    <p>Enter the gross salary below amount to calculate your net amount</p>
+                </div>
+                <div class="col-12 col-md-12">
+                    <label class="visually-hidden" for="inlineFormInputGroup"></label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="basic_salary" placeholder="Ksh"
+                            style="width: 125px;">
+                    </div>
+
+                    <div class="col-12 col-md-12">
+                        <button type="button" id="calculateButton" class="btn btn-primary mt-4"
+                            onclick="calculate()">Calculate</button>
+                    </div>
+                    <div class=" col-lg-8 col-md-12">
+                        <table class="table table-bordered mt-4">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Results</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Salary</td>
+                                    <td><span id="displayGross"></span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>NHIF</td>
+                                    <td><span id="displayNHIF"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>NSSF</td>
+                                    <td><span id="displayNSSF"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>House levy</td>
+                                    <td><span id="displaynhdf"></span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Taxable Income</td>
+                                    <td><span id="displayTaxable"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Final PAYE</td>
+                                    <td><span id="displayPAYE"></span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Net Pay</td>
+                                    <td><span id="displayNetsalary"></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <script src="/static/payroll.js"></script>
+        <script src="/static/boot.js"></script>
+</body>
+
+</html>
